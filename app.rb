@@ -21,6 +21,9 @@ Cuba.use Rack::Session::Cookie,
 Cuba.use Rack::Protection
 Cuba.use Rack::Protection::RemoteReferrer
 
+Dir["./models/**/*.rb"].each  { |rb| require rb }
+Dir["./routes/**/*.rb"].each  { |rb| require rb }
+
 admin = Nest.new("Admin")
 user = Nest.new("User")
 restaurant = Nest.new("Restaurant")
@@ -67,55 +70,6 @@ class EditComment < Scrivener
   def validate
     assert_present :body
   end
-end
-
-class Admin < Ohm::Model
-  attribute :email
-  attribute :password
-
-  unique :email
-end
-
-class User < Ohm::Model
-  attribute :first_name
-  index :first_name
-
-  attribute :last_name
-  index :last_name
-
-  attribute :email
-  attribute :password
-
-  unique :email
-
-  def comments
-    Comment.find(:user_id => self.id)
-  end
-
-  collection :comments, :Comment
-end
-
-class Restaurant < Ohm::Model
-  attribute :name
-  index :name
-
-  attribute :cuisine
-  index :cuisine
-
-  attribute :rating
-
-  def comments
-    Comment.find(:restaurant_id => self.id)
-  end
-
-  collection :comments, :Comment
-end
-
-class Comment < Ohm::Model
-  attribute :body
-
-  reference :user, :User
-  reference :restaurant, :Restaurant
 end
 
 Cuba.define do
