@@ -1,0 +1,50 @@
+% # encoding: utf-8
+
+% r = restaurant[restaurant_id].hgetall
+<h2>{{ r["name"] }}</h2>
+<p>Cuisine: {{ r["cuisine"] }}<br>
+  Rating: {{ r["rating"] }}</p>
+<h3>Comments</h3>
+% comments = Restaurant[restaurant_id].comments.key.smembers
+% if comments.any?
+  <table>
+    % comments.each do |comment|
+      % c = Comment[comment]
+      % u = User[c.user_id]
+      <tr>
+        <td style="width: 450px;">
+            {{ u.first_name + " " + u.last_name }} said:<br>
+              {{ Comment[comment].body }}
+        </td>
+      % if session[:admin]
+        <td style="background: none;">
+          <form action="/delete_comment/{{ restaurant_id }}/{{ comment }}" method="POST">
+            <button type="submit" name="delete_comment" class="btn_grey">Delete comment</button>
+          </form>
+        </td>
+      % end
+      </tr>
+    % end
+  </table>
+% else
+  <p>No comments yet.</p>
+% end
+<br>
+  % if session[:user]
+  % user_id = session[:user]
+  <form action="/add_comment/{{ restaurant_id }}/{{ user_id }}" method="POST">
+    <button type="submit" name="add_comment" class="btn_grey">Add comment</button>
+  </form>
+  <br>
+  % end
+  % if session[:admin]
+  <form action="/edit_restaurant/{{ restaurant_id }}" method="POST">
+    <button type="submit" name="edit" class="btn_grey">Edit restaurant</button>
+  </form>
+  <br>
+  <form action="/delete/{{ restaurant_id }}" method="POST">
+    <button type="submit" name="delete" class="btn_grey">Delete restaurant</button>
+  </form>
+  % end
+<br>
+<a href="/" class="btn_grey">Back to restaurants</a>

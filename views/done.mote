@@ -1,0 +1,4 @@
+% # encoding: utf-8
+
+<h3>{{ message }}</h3>
+<a href="{{ url }}{{ restaurant_id }}" class="btn_grey">{{ button_message }}</a>

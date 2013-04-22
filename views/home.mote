@@ -1,0 +1,12 @@
+% # encoding: utf-8
+
+% if session[:admin]
+  <a href="/add_restaurant" class="btn_grey">Add Restaurant</a>
+  <a href="/users" class="btn_grey">Manage Users</a>
+  <br><br>
+% end
+% r_ids = restaurant[:all].smembers
+% r_ids.each do |restaurant_id|
+% r = Restaurant[restaurant_id].name
+<p><a href="/restaurant/{{ restaurant_id }}" class="link">{{ r }}</a></p>
+% end

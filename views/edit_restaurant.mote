@@ -1,0 +1,25 @@
+% # encoding: utf-8
+
+<h3>Edit restaurant</h3>
+<form action="/edit_restaurant/{{ restaurant_id }}" method="POST" class="form_add_restaurant">
+  <label>Name:</label>
+  <input type="text" name="restaurant[name]"
+  value="{{ restaurant[restaurant_id].hget("name") }}">
+  <br>
+
+  <label>Cuisine</label>
+  <input type="text" name="restaurant[cuisine]"
+  value="{{ restaurant[restaurant_id].hget("cuisine") }}">
+  <br>
+
+  <label>Rating</label>
+  <input type="text" name="restaurant[rating]"
+  value="{{ restaurant[restaurant_id].hget("rating") }}">
+  <br>
+
+  <div>
+    <button type="submit" name="save" class="btn_grey">Save changes</button>
+  </div>
+</form>
+<br><br>
+<a href="/restaurant/{{ restaurant_id }}" class="btn_grey">Back to restaurant</a>

@@ -1,0 +1,23 @@
+% # encoding: utf-8
+
+<h3>Sign up</h3>
+<form action="/signup" method="POST" class="form_signup">
+  <label>Name:</label>
+  <input type="text" name="user[first_name]" value="{{ edit.first_name }}">
+  <br>
+
+  <label>Last name</label>
+  <input type="text" name="user[last_name]" value="{{ edit.last_name }}">
+  <br>
+
+  <label>Email</label>
+  <input type="text" name="user[email]" value="{{ edit.email }}">
+  <br>
+
+  <label>Password</label>
+  <input type="password" name="user[password]" value="">
+
+  <div>
+    <button type="submit" name="signup" class="btn_grey">Sign up</button>
+  </div>
+</form>
