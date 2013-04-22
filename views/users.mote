@@ -1,0 +1,20 @@
+% # encoding: utf-8
+<h3>Manage users</h3>
+% u_ids = user[:all].smembers
+<table>
+% u_ids.each do |user_id|
+  <tr>
+    % u = User[user_id]
+    <td style="padding-right: 10px;">{{ u.first_name + " " + u.last_name +
+            " (" + u.email + ")" }}</td>
+    <td style="padding-right: 10px; background: none;"><form action="/edit_user/{{ user_id }}" method="POST">
+        <button type="submit" name="edit_user" class="link" style="margin: 10px 0px 10px 0px;">Edit</button>
+      </form></td>
+    <td style="background: none;"><form action="/remove_user/{{ user_id }}" method="POST">
+        <button type="submit" name="remove_user" class="link" style="float: left; margin: 10px 10px 10px 0px;">Remove</button>
+      </form></td>
+  </tr>
+% end
+</table>
+<br>
+<a href="/" class="btn_grey">Back to restaurants</a>

@@ -1,0 +1,13 @@
+% # encoding: utf-8
+
+<h3>Add new comment</h3>
+<form action="/add_comment/{{ restaurant_id }}/{{ user_id }}" method="POST" class="form_add_comment">
+  <label>What do you think about {{ restaurant[restaurant_id].hget("name") }}?</label><br>
+  <textarea rows="5" cols="50" name="comment[body]" value="{{ edit.body }}"></textarea>
+  <br><br>
+  <div>
+    <button type="submit" name="add" class="btn_grey">Add comment</button>
+  </div>
+</form>
+<br><br>
+<a href="/restaurant/{{ restaurant_id }}" class="btn_grey">Back to restaurant</a>

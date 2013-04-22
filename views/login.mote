@@ -1,0 +1,16 @@
+% # encoding: utf-8
+
+<h3>Login</h3>
+<form action="/login" method="POST" class="form_signup">
+
+  <label>Email</label>
+  <input type="text" name="user[email]" value="{{ edit.email }}">
+  <br>
+
+  <label>Password</label>
+  <input type="password" name="user[password]" value="">
+
+  <div>
+    <button type="submit" name="login" class="btn_grey">Login</button>
+  </div>
+</form>

@@ -1,0 +1,29 @@
+% # encoding: utf-8
+
+<h3>Edit user</h3>
+<form action="/edit_user/{{ user_id }}" method="POST" class="form_signup">
+  <label>Name:</label>
+  <input type="text" name="user[first_name]"
+  value="{{ user[user_id].hget("first_name") }}">
+  <br>
+
+  <label>Last name</label>
+  <input type="text" name="user[last_name]"
+  value="{{ user[user_id].hget("last_name") }}">
+  <br>
+
+  <label>Email</label>
+  <input type="text" name="user[email]"
+  value="{{ user[user_id].hget("email") }}">
+  <br>
+
+  <label>New Password<br>
+    <span style="font-size: 11px; margin-left: 10px;">(leave empty if you don't want to change it)</span></label>
+  <input type="password" name="user[password]" value="">
+
+  <div>
+    <button type="submit" name="save" class="btn_grey">Save changes</button>
+  </div>
+</form>
+<br><br>
+<a href="/users" class="btn_grey">Back to users</a>

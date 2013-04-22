@@ -1,0 +1,15 @@
+Sat, 06 Apr 2013 17:53:55 -0300
+lib/redis/client.rb	Sat, 06 Apr 2013 17:53:52 -0300
+lib/redis/pipeline.rb	Sat, 06 Apr 2013 17:53:52 -0300
+lib/redis/version.rb	Sat, 06 Apr 2013 17:53:52 -0300
+lib/redis/errors.rb	Sat, 06 Apr 2013 17:53:52 -0300
+lib/redis/hash_ring.rb	Sat, 06 Apr 2013 17:53:52 -0300
+lib/redis/connection/command_helper.rb	Sat, 06 Apr 2013 17:53:52 -0300
+lib/redis/connection/hiredis.rb	Sat, 06 Apr 2013 17:53:52 -0300
+lib/redis/connection/synchrony.rb	Sat, 06 Apr 2013 17:53:52 -0300
+lib/redis/connection/ruby.rb	Sat, 06 Apr 2013 17:53:52 -0300
+lib/redis/connection/registry.rb	Sat, 06 Apr 2013 17:53:52 -0300
+lib/redis/subscribe.rb	Sat, 06 Apr 2013 17:53:52 -0300
+lib/redis/distributed.rb	Sat, 06 Apr 2013 17:53:52 -0300
+lib/redis/connection.rb	Sat, 06 Apr 2013 17:53:52 -0300
+lib/redis.rb	Sat, 06 Apr 2013 17:53:52 -0300
