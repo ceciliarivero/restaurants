@@ -29,5 +29,5 @@
 % if session[:user]
   <a href="/" class="btn_grey">Back to restaurants</a>
 % elsif session[:admin]
-  <a href="/users" class="btn_grey">Back to users</a>
+  <a href="/admin/users" class="btn_grey">Back to users</a>
 % end

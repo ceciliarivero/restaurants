@@ -10,7 +10,7 @@
     <td style="padding-right: 10px; background: none;"><form action="/edit_user/{{ user_id }}" method="POST">
         <button type="submit" name="edit_user" class="link" style="margin: 10px 0px 10px 0px;">Edit</button>
       </form></td>
-    <td style="background: none;"><form action="/remove_user/{{ user_id }}" method="POST">
+    <td style="background: none;"><form action="/admin/remove_user/{{ user_id }}" method="POST">
         <button type="submit" name="remove_user" class="link" style="float: left; margin: 10px 10px 10px 0px;">Remove</button>
       </form></td>
   </tr>

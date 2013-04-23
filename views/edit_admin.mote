@@ -1,7 +1,7 @@
 % # encoding: utf-8
 
 <h3>Edit Admin</h3>
-<form action="/edit_admin/{{ admin_id }}" method="POST" class="form_signup">
+<form action="/admin/edit_admin/{{ admin_id }}" method="POST" class="form_signup">
   <label>Email</label>
   <input type="text" name="admin[email]"
   value="{{ admin[admin_id].hget("email") }}">

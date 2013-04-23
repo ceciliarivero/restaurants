@@ -1,7 +1,7 @@
 % # encoding: utf-8
 
 <h3>Edit restaurant</h3>
-<form action="/edit_restaurant/{{ restaurant_id }}" method="POST" class="form_add_restaurant">
+<form action="/admin/edit_restaurant/{{ restaurant_id }}" method="POST" class="form_add_restaurant">
   <label>Name:</label>
   <input type="text" name="restaurant[name]"
   value="{{ restaurant[restaurant_id].hget("name") }}">
