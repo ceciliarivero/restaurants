@@ -1,6 +1,6 @@
 % # encoding: utf-8
 <h3>Manage users</h3>
-% u_ids = user[:all].smembers
+% u_ids = User.all.ids
 <table>
 % u_ids.each do |user_id|
   <tr>

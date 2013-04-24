@@ -1,9 +1,8 @@
 % # encoding: utf-8
-
-% r = restaurant[restaurant_id].hgetall
-<h2>{{ r["name"] }}</h2>
-<p>Cuisine: {{ r["cuisine"] }}<br>
-  Rating: {{ r["rating"] }}</p>
+% r = Restaurant[restaurant_id].attributes
+<h2>{{ r[:name] }}</h2>
+<p>Cuisine: {{ r[:cuisine] }}<br>
+  Rating: {{ r[:rating] }}</p>
 <h3>Comments</h3>
 % comments = Restaurant[restaurant_id].comments.key.smembers
 % if comments.any?

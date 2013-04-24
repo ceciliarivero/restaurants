@@ -4,7 +4,7 @@
 <form action="/admin/edit_admin/{{ admin_id }}" method="POST" class="form_signup">
   <label>Email</label>
   <input type="text" name="admin[email]"
-  value="{{ admin[admin_id].hget("email") }}">
+  value="{{ Admin[admin_id].email }}">
   <br>
 
   <label>New Password<br>

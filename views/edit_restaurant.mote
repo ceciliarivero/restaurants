@@ -4,17 +4,17 @@
 <form action="/admin/edit_restaurant/{{ restaurant_id }}" method="POST" class="form_add_restaurant">
   <label>Name:</label>
   <input type="text" name="restaurant[name]"
-  value="{{ restaurant[restaurant_id].hget("name") }}">
+  value="{{ Restaurant[restaurant_id].name }}">
   <br>
 
   <label>Cuisine</label>
   <input type="text" name="restaurant[cuisine]"
-  value="{{ restaurant[restaurant_id].hget("cuisine") }}">
+  value="{{ Restaurant[restaurant_id].cuisine }}">
   <br>
 
   <label>Rating</label>
   <input type="text" name="restaurant[rating]"
-  value="{{ restaurant[restaurant_id].hget("rating") }}">
+  value="{{ Restaurant[restaurant_id].rating }}">
   <br>
 
   <div>

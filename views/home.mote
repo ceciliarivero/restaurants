@@ -5,7 +5,7 @@
   <a href="/admin/users" class="btn_grey">Manage Users</a>
   <br><br>
 % end
-% r_ids = restaurant[:all].smembers
+% r_ids = Restaurant.all.ids
 % r_ids.each do |restaurant_id|
 % r = Restaurant[restaurant_id].name
 <p><a href="/restaurant/{{ restaurant_id }}" class="link">{{ r }}</a></p>
