@@ -24,10 +24,6 @@ Cuba.use Rack::Protection::RemoteReferrer
 Dir["./models/**/*.rb"].each  { |rb| require rb }
 Dir["./routes/**/*.rb"].each  { |rb| require rb }
 
-admin = Nest.new("Admin")
-user = Nest.new("User")
-restaurant = Nest.new("Restaurant")
-
 class EditAdmin < Scrivener
   attr_accessor :email
   attr_accessor :password
@@ -78,8 +74,7 @@ Cuba.define do
       title: "Restaurants",
       user_id: session[:user],
       admin_id: session[:admin],
-      content: mote("views/home.mote",
-        restaurant: restaurant))
+      content: mote("views/home.mote"))
   end
 
   on "admin" do

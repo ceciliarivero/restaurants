@@ -4,17 +4,17 @@
 <form action="/edit_user/{{ user_id }}" method="POST" class="form_signup">
   <label>Name:</label>
   <input type="text" name="user[first_name]"
-  value="{{ user[user_id].hget("first_name") }}">
+  value="{{ User[user_id].first_name }}">
   <br>
 
   <label>Last name</label>
   <input type="text" name="user[last_name]"
-  value="{{ user[user_id].hget("last_name") }}">
+  value="{{ User[user_id].last_name }}">
   <br>
 
   <label>Email</label>
   <input type="text" name="user[email]"
-  value="{{ user[user_id].hget("email") }}">
+  value="{{ User[user_id].email }}">
   <br>
 
   <label>New Password<br>

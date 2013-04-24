@@ -1,14 +1,10 @@
 class Admins < Cuba
   define do
-    admin = Nest.new("Admin")
-    user = Nest.new("User")
-    restaurant = Nest.new("Restaurant")
-
     on "login" do
       on param("admin") do |params|
         edit = EditAdmin.new(params)
         if Admin.with(:email, edit.email)
-          admin_id = admin[:uniques][:email].hget(edit.email)
+          admin_id = Admin.with(:email, edit.email).id
           if Admin[admin_id].password == Digest::SHA1.hexdigest(edit.password)
             session[:admin] = admin_id
             res.redirect "/"
@@ -61,7 +57,6 @@ class Admins < Cuba
           res.write mote("views/layout.mote",
             title: "Edit Admin",
             content: mote("views/edit_admin.mote",
-              admin: admin,
               admin_id: admin_id))
         end
       else
@@ -120,16 +115,14 @@ class Admins < Cuba
               title: "Edit restaurant",
               message: "Invalid information. Please check the form and try again.",
               content: mote("views/edit_restaurant.mote",
-                restaurant_id: restaurant_id,
-                restaurant: restaurant))
+                restaurant_id: restaurant_id))
           end
         end
         on default do
           res.write mote("views/layout.mote",
             title: "Edit restaurant",
             content: mote("views/edit_restaurant.mote",
-              restaurant_id: restaurant_id,
-              restaurant: restaurant))
+              restaurant_id: restaurant_id))
         end
       else
         res.redirect "/not_permitted"
@@ -170,8 +163,7 @@ class Admins < Cuba
       if session[:admin]
         res.write mote("views/layout.mote",
           title: "Manage Users",
-          content: mote("views/users.mote",
-            user: user))
+          content: mote("views/users.mote"))
       else
         res.redirect "/not_permitted"
       end
