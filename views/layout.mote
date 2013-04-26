@@ -31,7 +31,7 @@
       </div>
     <div id="container">
 % if defined?(message)
-    <p>{{ message }}</p>
+    <h4>{{ message }}</h4>
 % end
 {{ content }}
       </div>

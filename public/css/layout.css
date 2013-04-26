@@ -30,6 +30,10 @@ h1 {
   padding: 10px 30px;
   color: #FFFFFF;
 }
+h4 {
+  color: red;
+  font-weight: normal;
+}
 #menu {
   margin: 0px;
   padding: 10px;

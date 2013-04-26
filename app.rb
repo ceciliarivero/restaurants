@@ -68,6 +68,14 @@ class EditComment < Scrivener
   end
 end
 
+class SearchUsers < Scrivener
+  attr_accessor :email
+
+  def validate
+    assert_email :email
+  end
+end
+
 Cuba.define do
   on root do
     res.write mote("views/layout.mote",

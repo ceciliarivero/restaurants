@@ -168,12 +168,30 @@ class Guests < Cuba
           restaurant_id: restaurant_id))
     end
 
+    on "search" do
+      on param("restaurant") do |params|
+        edit = params
+        if Restaurant.find(:name => edit["name"]).empty?
+          res.write mote("views/layout.mote",
+              title: "Login",
+              message: "Restaurant not found.",
+              content: mote("views/home.mote",
+                edit: edit))
+        else
+          restaurant_id = Restaurant.find(:name => edit["name"]).ids[0]
+          res.write mote("views/layout.mote",
+            title: "Restaurant Details",
+            content: mote("views/restaurant.mote",
+              restaurant_id: restaurant_id))
+        end
+      end
+    end
+
     on "not_permitted" do
       res.write mote("views/layout.mote",
         title: "Restaurants",
         message: "You don't have permissions to perform this action.",
-        content: mote("views/home.mote",
-          restaurant: restaurant))
+        content: mote("views/home.mote"))
     end
 
     on "logout" do
