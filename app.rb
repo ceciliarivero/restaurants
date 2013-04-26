@@ -16,7 +16,7 @@ Cuba.use Rack::Static,
 Cuba.use Rack::MethodOverride
 Cuba.use Rack::Session::Cookie,
   key: "restaurants",
-  secret: "5768a9b4ed0bd9d9cee9db8a0e50b730a28c4567"
+  secret: "your_secret_here"
 
 Cuba.use Rack::Protection
 Cuba.use Rack::Protection::RemoteReferrer
