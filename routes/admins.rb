@@ -60,7 +60,7 @@ class Admins < Cuba
               admin_id: admin_id))
         end
       else
-        res.redirect "/not_permitted"
+        res.redirect "/admin/not_permitted"
       end
     end
 
@@ -93,7 +93,7 @@ class Admins < Cuba
               edit: edit))
         end
       else
-        res.redirect "/not_permitted"
+        res.redirect "/admin/not_permitted"
       end
     end
 
@@ -125,7 +125,7 @@ class Admins < Cuba
               restaurant_id: restaurant_id))
         end
       else
-        res.redirect "/not_permitted"
+        res.redirect "/admin/not_permitted"
       end
     end
 
@@ -140,7 +140,7 @@ class Admins < Cuba
             url: "/",
             button_message: "Back to restaurants list"))
       else
-        res.redirect "/not_permitted"
+        res.redirect "/admin/not_permitted"
       end
     end
 
@@ -155,17 +155,19 @@ class Admins < Cuba
             url: "/restaurant/",
             button_message: "Back to restaurant"))
       else
-        res.redirect "/not_permitted"
+        res.redirect "/admin/not_permitted"
       end
     end
 
     on "users" do
       if session[:admin]
+        edit = SearchUsers.new({})
         res.write mote("views/layout.mote",
           title: "Manage Users",
-          content: mote("views/users.mote"))
+          content: mote("views/users.mote",
+            edit: edit))
       else
-        res.redirect "/not_permitted"
+        res.redirect "/admin/not_permitted"
       end
     end
 
@@ -181,8 +183,47 @@ class Admins < Cuba
             url: "/admin/users",
             button_message: "Back"))
       else
-        res.redirect "/not_permitted"
+        res.redirect "/admin/not_permitted"
       end
+    end
+
+    on "search_users" do
+      if session[:admin]
+        on param("user") do |params|
+          edit = SearchUsers.new(params)
+          if edit.valid?
+            if User.with(:email, edit.email)
+              user_id = User.with(:email, edit.email).id
+              res.write mote("views/layout.mote",
+                title: "User Details",
+                content: mote("views/user.mote",
+                  user_id: user_id,
+                  edit: edit))
+            else
+              res.write mote("views/layout.mote",
+                  title: "Manage Users",
+                  message: "User not found.",
+                  content: mote("views/users.mote",
+                    edit: edit))
+            end
+          else
+            res.write mote("views/layout.mote",
+              title: "Manage Users",
+              message: "Invalid information. Please check your input and try again.",
+              content: mote("views/users.mote",
+                edit: edit))
+          end
+        end
+      else
+        res.redirect "/admin/not_permitted"
+      end
+    end
+
+    on "not_permitted" do
+      res.write mote("views/layout.mote",
+        title: "Restaurants",
+        message: "You don't have permissions to perform this action.",
+        content: mote("views/home.mote"))
     end
 
     on "logout" do

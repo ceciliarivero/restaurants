@@ -5,6 +5,10 @@
   <a href="/admin/users" class="btn_grey">Manage Users</a>
   <br><br>
 % end
+<form action="/search" method="POST">
+  <input type="text" name="restaurant[name]" value="" style="margin-right: 10px;">
+  <button type="submit" name="search_restaurants" class="btn_grey">Search Restaurants</button>
+</form>
 % r_ids = Restaurant.all.ids
 % r_ids.each do |restaurant_id|
 % r = Restaurant[restaurant_id].name

@@ -1,14 +1,15 @@
 % # encoding: utf-8
-<h3>Manage users</h3>
+
+<h3>User found!</h3>
 <form action="/admin/search_users" method="POST">
-  <input type="text" name="user[email]" value="{{ edit.email }}" style="margin-right: 10px;">
-  <button type="submit" name="search_users" class="btn_grey">Find User by email</button>
+  <input type="text" name="user[email]" value="" style="margin-right: 10px;">
+  <button type="submit" name="signup" class="btn_grey">Find another User by email</button>
 </form>
-% u_ids = User.all.ids
+
+% u = User[user_id]
+
 <table>
-% u_ids.each do |user_id|
   <tr>
-    % u = User[user_id]
     <td style="padding-right: 10px;">{{ u.first_name + " " + u.last_name +
             " (" + u.email + ")" }}</td>
     <td style="padding-right: 10px; background: none;"><form action="/edit_user/{{ user_id }}" method="POST">
@@ -18,7 +19,6 @@
         <button type="submit" name="remove_user" class="link" style="float: left; margin: 10px 10px 10px 0px;">Remove</button>
       </form></td>
   </tr>
-% end
 </table>
 <br>
-<a href="/" class="btn_grey">Back to restaurants</a>
+<a href="/admin/users" class="btn_grey">Back to users</a>
