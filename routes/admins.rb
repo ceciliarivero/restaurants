@@ -3,24 +3,16 @@ class Admins < Cuba
     on "login" do
       on param("admin") do |params|
         edit = EditAdmin.new(params)
-        if Admin.with(:email, edit.email)
-          admin_id = Admin.with(:email, edit.email).id
-          if Admin[admin_id].password == Digest::SHA1.hexdigest(edit.password)
-            session[:admin] = admin_id
+        if edit.valid? && Admin.with(:email, edit.email) &&
+          Admin.with(:email, edit.email).password == Digest::SHA1.hexdigest(edit.password)
+            session[:admin] = Admin.with(:email, edit.email).id
             res.redirect "/"
-          else
-            res.write mote("views/layout.mote",
-              title: "Admin Login",
-              message: "Incorrect Password.",
-              content: mote("views/admin_login.mote",
-                edit: edit))
-          end
         else
           res.write mote("views/layout.mote",
-              title: "Admin Login",
-              message: "This email is not registered as Admin.",
-              content: mote("views/admin_login.mote",
-                edit: edit))
+          title: "Edit Admin",
+          message: "Email or password are incorrect.",
+          content: mote("views/admin_login.mote",
+            edit: edit))
         end
       end
     end
