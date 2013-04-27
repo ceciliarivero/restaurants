@@ -4,7 +4,7 @@
 <form action="/admin/login" method="POST" class="form_signup">
 
   <label>Email</label>
-  <input type="text" name="admin[email]" value="{{ edit.email }}">
+  <input type="text" name="admin[email]" value="{{ params["email"] }}">
   <br>
 
   <label>Password</label>
