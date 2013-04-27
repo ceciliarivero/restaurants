@@ -8,7 +8,7 @@ class Admins < Cuba
           res.redirect "/"
         else
           res.write mote("views/layout.mote",
-          title: "Edit Admin",
+          title: "Admin login",
           message: "Email or password are incorrect.",
           content: mote("views/admin_login.mote",
             params: params))
