@@ -39,6 +39,9 @@ h4 {
   padding: 10px;
   float: right;
 }
+#menu a {
+  margin-left: 15px;
+}
 #container {
   margin: 0px;
   padding: 30px;
@@ -47,11 +50,16 @@ table {
   margin: 20px 0;
   padding: 0;
 }
-table tr td {
+table tr td#left {
+  width: 300px;
   padding: 10px;
   margin: 10px;
   background-color: #F8F3E8;
   border-radius: 6px;
+}
+table tr td#right {
+  background-color: none;
+  padding-left: 15px;
 }
 a {
   text-decoration: none;
@@ -108,6 +116,10 @@ span {
   margin-top: 20px;
   float: right;
 }
+.form_signup span {
+  font-size: 11px;
+  margin-left: 10px;
+}
 .form_add_comment {
   width: 350px;
   background: #fff;
@@ -135,6 +147,9 @@ span {
   width: 310px;
   line-height: 18px;
   border: 1px solid #c7c7c7;
+}
+.form_search input {
+  margin-right: 10px;
 }
 .btn_grey {
 
