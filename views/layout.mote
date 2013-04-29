@@ -14,19 +14,19 @@
         <a href="/">Home</a>
         % if session[:user] != nil
           % user_id = session[:user]
-            <a href="/edit_user/{{ user_id }}" style="margin-left: 15px;">My account</a>
+            <a href="/edit_user/{{ user_id }}">My account</a>
         % elsif session[:admin] != nil
           % admin_id = session[:admin]
-            <a href="/admin/edit_admin/{{ admin_id }}" style="margin-left: 15px;">Admin account</a>
+            <a href="/admin/edit_admin/{{ admin_id }}">Admin account</a>
         % else
-          <a href="/login" style="margin-left: 15px;">Login</a>
+          <a href="/login">Login</a>
         % end
         % if session[:user]
-          <a href="/logout" style="margin-left: 15px;">Log out</a>
+          <a href="/logout">Log out</a>
         % elsif session[:admin]
-          <a href="/admin/logout" style="margin-left: 15px;">Log out</a>
+          <a href="/admin/logout">Log out</a>
         % else
-          <a href="/signup" style="margin-left: 15px;">Sign Up</a>
+          <a href="/signup">Sign Up</a>
         % end
       </div>
     <div id="container">

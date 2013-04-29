@@ -1,8 +1,8 @@
 % # encoding: utf-8
 
 <h3>User found!</h3>
-<form action="/admin/search_users" method="POST">
-  <input type="text" name="user[email]" value="" style="margin-right: 10px;">
+<form action="/admin/search_users" method="POST" class="form_search">
+  <input type="text" name="user[email]" value="">
   <button type="submit" name="signup" class="btn_grey">Find another User by email</button>
 </form>
 
@@ -10,13 +10,14 @@
 
 <table>
   <tr>
-    <td style="padding-right: 10px;">{{ u.first_name + " " + u.last_name +
-            " (" + u.email + ")" }}</td>
-    <td style="padding-right: 10px; background: none;"><form action="/edit_user/{{ user_id }}" method="POST">
-        <button type="submit" name="edit_user" class="link" style="margin: 10px 0px 10px 0px;">Edit</button>
+    <td id="left">{{ u.first_name + " " + u.last_name }}<br>
+            {{ "(" + u.email + ")" }}</td>
+    <td id="right">
+      <form action="/edit_user/{{ user_id }}" method="POST">
+        <button type="submit" name="edit_user" class="link">Edit</button>
       </form></td>
-    <td style="background: none;"><form action="/admin/remove_user/{{ user_id }}" method="POST">
-        <button type="submit" name="remove_user" class="link" style="float: left; margin: 10px 10px 10px 0px;">Remove</button>
+    <td id="right"><form action="/admin/remove_user/{{ user_id }}" method="POST">
+        <button type="submit" name="remove_user" class="link">Remove</button>
       </form></td>
   </tr>
 </table>

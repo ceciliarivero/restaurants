@@ -1,7 +1,7 @@
 % # encoding: utf-8
 <h3>Manage users</h3>
-<form action="/admin/search_users" method="POST">
-  <input type="text" name="user[email]" value="{{ edit.email }}" style="margin-right: 10px;">
+<form action="/admin/search_users" method="POST" class="form_search">
+  <input type="text" name="user[email]" value="{{ edit.email }}">
   <button type="submit" name="search_users" class="btn_grey">Find User by email</button>
 </form>
 % u_ids = User.all.ids
@@ -9,13 +9,13 @@
 % u_ids.each do |user_id|
   <tr>
     % u = User[user_id]
-    <td style="padding-right: 10px;">{{ u.first_name + " " + u.last_name +
-            " (" + u.email + ")" }}</td>
-    <td style="padding-right: 10px; background: none;"><form action="/edit_user/{{ user_id }}" method="POST">
-        <button type="submit" name="edit_user" class="link" style="margin: 10px 0px 10px 0px;">Edit</button>
+    <td id="left">{{ u.first_name + " " + u.last_name }}<br>
+            {{ "(" + u.email + ")" }}</td>
+    <td id="right"><form action="/edit_user/{{ user_id }}" method="POST">
+        <button type="submit" name="edit_user" class="link">Edit</button>
       </form></td>
-    <td style="background: none;"><form action="/admin/remove_user/{{ user_id }}" method="POST">
-        <button type="submit" name="remove_user" class="link" style="float: left; margin: 10px 10px 10px 0px;">Remove</button>
+    <td id="right"><form action="/admin/remove_user/{{ user_id }}" method="POST">
+        <button type="submit" name="remove_user" class="link">Remove</button>
       </form></td>
   </tr>
 % end

@@ -11,12 +11,12 @@
       % c = Comment[comment]
       % u = User[c.user_id]
       <tr>
-        <td style="width: 450px;">
+        <td id="left">
             {{ u.first_name + " " + u.last_name }} said:<br>
               {{ Comment[comment].body }}
         </td>
       % if session[:admin]
-        <td style="background: none;">
+        <td id="right">
           <form action="/admin/delete_comment/{{ restaurant_id }}/{{ comment }}" method="POST">
             <button type="submit" name="delete_comment" class="btn_grey">Delete comment</button>
           </form>

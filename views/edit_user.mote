@@ -18,7 +18,7 @@
   <br>
 
   <label>New Password<br>
-    <span style="font-size: 11px; margin-left: 10px;">(leave empty if you don't want to change it)</span></label>
+    <span>(leave empty if you don't want to change it)</span></label>
   <input type="password" name="user[password]" value="">
 
   <div>
