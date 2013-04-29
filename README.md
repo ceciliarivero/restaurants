@@ -20,12 +20,11 @@ then 'dep install' and let [dep](https://github.com/cyx/dep) do its job.
 website working.
 
 Note: to be able to log in as Admin, you'll have to create the corresponding
-keys in Redis database 1:
+keys in Redis:
 
 In Terminal:
 
 - redis-cli
-- select 1
 - HMSET Admin:1 "email" "admin@mail.com" "password" "1234"
 - SET Admin:id "1"
 - HMSET Admin:uniques:email "admin@mail.com" "1"
