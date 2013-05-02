@@ -67,7 +67,7 @@ class EditComment < Scrivener
   end
 end
 
-class SearchUsers < Scrivener
+class FindUsers < Scrivener
   attr_accessor :email
 
   def validate
@@ -86,6 +86,10 @@ Cuba.define do
 
   on "admin" do
     run Admins
+  end
+
+  on "user" do
+    run Users
   end
 
   on default do

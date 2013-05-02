@@ -31,7 +31,7 @@
 <br>
   % if session[:user]
   % user_id = session[:user]
-  <form action="/add_comment/{{ restaurant_id }}/{{ user_id }}" method="POST">
+  <form action="/user/add_comment/{{ restaurant_id }}/{{ user_id }}" method="POST">
     <button type="submit" name="add_comment" class="btn_grey">Add comment</button>
   </form>
   <br>

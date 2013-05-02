@@ -1,7 +1,7 @@
 % # encoding: utf-8
 
 <h3>Edit user</h3>
-<form action="/edit_user/{{ user_id }}" method="POST" class="form_signup">
+<form action="/user/edit_user/{{ user_id }}" method="POST" class="form_signup">
   <label>Name:</label>
   <input type="text" name="user[first_name]"
   value="{{ User[user_id].first_name }}">
