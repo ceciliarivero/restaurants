@@ -44,6 +44,7 @@ class Admins < Cuba
                 admin_id: admin_id))
           end
         end
+
         on default do
           res.write mote("views/layout.mote",
             title: "Edit Admin",
@@ -152,7 +153,7 @@ class Admins < Cuba
 
     on "users" do
       if session[:admin]
-        edit = SearchUsers.new({})
+        edit = FindUsers.new({})
         res.write mote("views/layout.mote",
           title: "Manage Users",
           content: mote("views/users.mote",
@@ -178,10 +179,10 @@ class Admins < Cuba
       end
     end
 
-    on "search_users" do
+    on "find_users" do
       if session[:admin]
         on param("user") do |params|
-          edit = SearchUsers.new(params)
+          edit = FindUsers.new(params)
           if edit.valid?
             if User.with(:email, edit.email)
               user_id = User.with(:email, edit.email).id

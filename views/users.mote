@@ -1,8 +1,8 @@
 % # encoding: utf-8
 <h3>Manage users</h3>
-<form action="/admin/search_users" method="POST" class="form_search">
+<form action="/admin/find_users" method="POST" class="form_search">
   <input type="text" name="user[email]" value="{{ edit.email }}">
-  <button type="submit" name="search_users" class="btn_grey">Find User by email</button>
+  <button type="submit" name="find_users" class="btn_grey">Find User by email</button>
 </form>
 % u_ids = User.all.ids
 <table>
@@ -11,7 +11,7 @@
     % u = User[user_id]
     <td id="left">{{ u.first_name + " " + u.last_name }}<br>
             {{ "(" + u.email + ")" }}</td>
-    <td id="right"><form action="/edit_user/{{ user_id }}" method="POST">
+    <td id="right"><form action="/user/edit_user/{{ user_id }}" method="POST">
         <button type="submit" name="edit_user" class="link">Edit</button>
       </form></td>
     <td id="right"><form action="/admin/remove_user/{{ user_id }}" method="POST">

@@ -1,7 +1,7 @@
 % # encoding: utf-8
 
 <h3>Add new comment</h3>
-<form action="/add_comment/{{ restaurant_id }}/{{ user_id }}" method="POST" class="form_add_comment">
+<form action="/user/add_comment/{{ restaurant_id }}/{{ user_id }}" method="POST" class="form_add_comment">
   <label>What do you think about {{ Restaurant[restaurant_id].name }}?</label><br>
   <textarea rows="5" cols="50" name="comment[body]" value="{{ edit.body }}"></textarea>
   <br><br>
