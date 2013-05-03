@@ -24,8 +24,7 @@ Dir["./models/**/*.rb"].each  { |rb| require rb }
 Dir["./routes/**/*.rb"].each  { |rb| require rb }
 
 class EditAdmin < Scrivener
-  attr_accessor :email
-  attr_accessor :password
+  attr_accessor :email, :password
 
   def validate
     assert_email :email
@@ -34,10 +33,7 @@ class EditAdmin < Scrivener
 end
 
 class EditUser < Scrivener
-  attr_accessor :first_name
-  attr_accessor :last_name
-  attr_accessor :email
-  attr_accessor :password
+  attr_accessor :first_name, :last_name, :email, :password
 
   def validate
     assert_present :first_name
@@ -48,9 +44,7 @@ class EditUser < Scrivener
 end
 
 class EditRestaurant < Scrivener
-  attr_accessor :name
-  attr_accessor :cuisine
-  attr_accessor :rating
+  attr_accessor :name, :cuisine, :rating
 
   def validate
     assert_present :name

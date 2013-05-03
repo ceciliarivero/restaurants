@@ -40,7 +40,6 @@ class Admins < Cuba
               title: "Edit Admin",
               message: "Invalid information. Please check the form and try again.",
               content: mote("views/edit_admin.mote",
-                admin: admin,
                 admin_id: admin_id))
           end
         end
