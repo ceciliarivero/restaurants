@@ -82,7 +82,7 @@ Cuba.define do
     run Admins
   end
 
-  on "login" do
+  on "user" do
     run Users
   end
 
