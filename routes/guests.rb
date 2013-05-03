@@ -3,8 +3,7 @@ class Guests < Cuba
     on "signup" do
       on param("user") do |params|
         edit = EditUser.new(params)
-        if edit.valid?
-          begin
+        if edit.valid? && User.with(:email, edit.email) == nil
             edit.password = Digest::SHA1.hexdigest(edit.password)
             u = User.create(edit.attributes)
             u.save
@@ -17,18 +16,10 @@ class Guests < Cuba
                 message: "Success! You have just signed up.",
                 url: "/",
                 button_message: "Back to restaurants"))
-          rescue Ohm::UniqueIndexViolation
-            user[:id].decr
-            res.write mote("views/layout.mote",
-              title: "Sign up",
-              message: "This email address is already registered.",
-              content: mote("views/signup.mote",
-                edit: edit))
-          end
         else
           res.write mote("views/layout.mote",
           title: "Sign up",
-          message: "Invalid information. Please check the form and try again.",
+          message: "Invalid information or email already registered.",
           content: mote("views/signup.mote",
             edit: edit))
         end
