@@ -19,7 +19,7 @@
           % admin_id = session[:admin]
             <a href="/admin/edit_admin/{{ admin_id }}">Admin account</a>
         % else
-          <a href="/user">Login</a>
+          <a href="/login">Login</a>
         % end
         % if session[:user]
           <a href="/user/logout">Log out</a>
