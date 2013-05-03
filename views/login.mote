@@ -1,7 +1,7 @@
 % # encoding: utf-8
 
 <h3>Login</h3>
-<form action="/login/login" method="POST" class="form_signup">
+<form action="/user/login" method="POST" class="form_signup">
 
   <label>Email</label>
   <input type="text" name="user[email]" value="{{ params["email"] }}">
