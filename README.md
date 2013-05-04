@@ -13,8 +13,7 @@ How to start
 
 - Clone this repository.
 
-- Install the gems listed in '.gems' or run 'gem install dep' and
-then 'dep install' and let [dep](https://github.com/cyx/dep) do its job.
+- Install the gems listed in '.gems' or run 'gem install dep', then 'dep install' and let [dep](https://github.com/cyx/dep) do its job.
 
 - Run 'shotgun' and head to 'localhost:9393' in your browser to see the
 website working.
