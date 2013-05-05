@@ -1,7 +1,7 @@
 % # encoding: utf-8
 
 <h3>Edit user</h3>
-<form action="/user/edit_user/{{ user_id }}" method="POST" class="form_signup">
+<form action="/user/edit_user/{{ user_id }}" method="POST" id="form_signup">
   <label>Name:</label>
   <input type="text" name="user[first_name]"
   value="{{ User[user_id].first_name }}">
@@ -22,12 +22,12 @@
   <input type="password" name="user[password]" value="">
 
   <div>
-    <button type="submit" name="save" class="btn_grey">Save changes</button>
+    <button type="submit" name="save" id="btn_grey">Save changes</button>
   </div>
 </form>
 <br><br>
 % if session[:user]
-  <a href="/" class="btn_grey">Back to restaurants</a>
+  <a href="/" id="btn_grey">Back to restaurants</a>
 % elsif session[:admin]
-  <a href="/admin/users" class="btn_grey">Back to users</a>
+  <a href="/admin/users" id="btn_grey">Back to users</a>
 % end

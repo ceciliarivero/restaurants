@@ -1,16 +1,30 @@
 % # encoding: utf-8
 
 % if session[:admin]
-  <a href="/admin/add_restaurant" class="btn_grey">Add Restaurant</a>
-  <a href="/admin/users" class="btn_grey">Manage Users</a>
+  <a href="/admin/add_restaurant" id="btn_grey">Add Restaurant</a>
+  <a href="/admin/users" id="btn_grey">Manage Users</a>
   <br><br>
 % end
-<form action="/search" method="POST" class="form_search">
+<form action="/search" method="POST" id="form_search">
   <input type="text" name="restaurant[name]" value="">
-  <button type="submit" name="search_restaurants" class="btn_grey">Search Restaurants</button>
+  <button type="submit" name="search_restaurants" id="btn_grey">Search Restaurants</button>
 </form>
-% r_ids = Restaurant.all.ids
-% r_ids.each do |restaurant_id|
-% r = Restaurant[restaurant_id].name
-<p><a href="/restaurant/{{ restaurant_id }}" class="link">{{ r }}</a></p>
+<table id="restaurants">
+  <tr>
+    <th><a href="{{ link_by_name }}">Restaurant</a></th>
+    <th><a href="{{ link_by_cuisine }}">Cuisine</a></th>
+    <th><a href="{{ link_by_rating }}">Rating</a></th>
+  </tr>
+<p id="orderBy">
+% restaurants.each do |r|
+</p>
+  <tr>
+    <td><a href="/restaurant/{{ r.id }}" id="link">{{ r.name }}</a></td>
+    <td>{{ r.cuisine }}</td>
+    <td>{{ r.rating }}</td>
+  </tr>
 % end
+</table>
+
+
+

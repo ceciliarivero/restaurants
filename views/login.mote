@@ -1,7 +1,7 @@
 % # encoding: utf-8
 
 <h3>Login</h3>
-<form action="/user/login" method="POST" class="form_signup">
+<form action="/user/login" method="POST" id="form_signup">
 
   <label>Email</label>
   <input type="text" name="user[email]" value="{{ params["email"] }}">
@@ -11,6 +11,6 @@
   <input type="password" name="user[password]" value="">
 
   <div>
-    <button type="submit" name="login" class="btn_grey">Login</button>
+    <button type="submit" name="login" id="btn_grey">Login</button>
   </div>
 </form>
