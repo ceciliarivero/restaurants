@@ -49,7 +49,11 @@ class Guests < Cuba
               title: "Login",
               message: "Restaurant not found.",
               content: mote("views/home.mote",
-                edit: edit))
+                edit: edit,
+                link_by_name: "/restaurants_by_name_asc",
+                link_by_cuisine: "/restaurants_by_cuisine_asc",
+                link_by_rating: "/restaurants_by_rating_asc",
+                restaurants: Restaurant.all.sort_by(:name, order: "ALPHA DESC")))
         else
           restaurant_id = Restaurant.find(:name => edit["name"]).ids[0]
           res.write mote("views/layout.mote",
