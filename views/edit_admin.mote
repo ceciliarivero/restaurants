@@ -1,7 +1,7 @@
 % # encoding: utf-8
 
 <h3>Edit Admin</h3>
-<form action="/admin/edit_admin/{{ admin_id }}" method="POST" class="form_signup">
+<form action="/admin/edit_admin/{{ admin_id }}" method="POST" id="form_signup">
   <label>Email</label>
   <input type="text" name="admin[email]"
   value="{{ Admin[admin_id].email }}">
@@ -12,8 +12,8 @@
   <input type="password" name="admin[password]" value="">
 
   <div>
-    <button type="submit" name="save" class="btn_grey">Save changes</button>
+    <button type="submit" name="save" id="btn_grey">Save changes</button>
   </div>
 </form>
 <br><br>
-<a href="/" class="btn_grey">Back to restaurants</a>
+<a href="/" id="btn_grey">Back to restaurants</a>

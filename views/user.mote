@@ -1,9 +1,9 @@
 % # encoding: utf-8
 
 <h3>User found!</h3>
-<form action="/admin/find_users" method="POST" class="form_search">
+<form action="/admin/find_users" method="POST" id="form_search">
   <input type="text" name="user[email]" value="">
-  <button type="submit" name="signup" class="btn_grey">Find another User by email</button>
+  <button type="submit" name="signup" id="btn_grey">Find another User by email</button>
 </form>
 
 % u = User[user_id]
@@ -14,12 +14,12 @@
             {{ "(" + u.email + ")" }}</td>
     <td id="right">
       <form action="/user/edit_user/{{ user_id }}" method="POST">
-        <button type="submit" name="edit_user" class="link">Edit</button>
+        <button type="submit" name="edit_user" id="link">Edit</button>
       </form></td>
     <td id="right"><form action="/admin/remove_user/{{ user_id }}" method="POST">
-        <button type="submit" name="remove_user" class="link">Remove</button>
+        <button type="submit" name="remove_user" id="link">Remove</button>
       </form></td>
   </tr>
 </table>
 <br>
-<a href="/admin/users" class="btn_grey">Back to users</a>
+<a href="/admin/users" id="btn_grey">Back to users</a>

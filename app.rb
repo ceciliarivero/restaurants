@@ -75,7 +75,11 @@ Cuba.define do
       title: "Restaurants",
       user_id: session[:user],
       admin_id: session[:admin],
-      content: mote("views/home.mote"))
+      content: mote("views/home.mote",
+        link_by_name: "/restaurants_by_name_desc",
+        link_by_cuisine: "/restaurants_by_cuisine_desc",
+        link_by_rating: "/restaurants_by_rating_desc",
+        restaurants: Restaurant.all.sort_by(:name, order: "ALPHA ASC")))
   end
 
   on "admin" do

@@ -18,7 +18,7 @@
       % if session[:admin]
         <td id="right">
           <form action="/admin/delete_comment/{{ restaurant_id }}/{{ comment }}" method="POST">
-            <button type="submit" name="delete_comment" class="btn_grey">Delete comment</button>
+            <button type="submit" name="delete_comment" id="btn_grey">Delete comment</button>
           </form>
         </td>
       % end
@@ -32,18 +32,18 @@
   % if session[:user]
   % user_id = session[:user]
   <form action="/user/add_comment/{{ restaurant_id }}/{{ user_id }}" method="POST">
-    <button type="submit" name="add_comment" class="btn_grey">Add comment</button>
+    <button type="submit" name="add_comment" id="btn_grey">Add comment</button>
   </form>
   <br>
   % end
   % if session[:admin]
   <form action="/admin/edit_restaurant/{{ restaurant_id }}" method="POST">
-    <button type="submit" name="edit" class="btn_grey">Edit restaurant</button>
+    <button type="submit" name="edit" id="btn_grey">Edit restaurant</button>
   </form>
   <br>
   <form action="/admin/delete/{{ restaurant_id }}" method="POST">
-    <button type="submit" name="delete" class="btn_grey">Delete restaurant</button>
+    <button type="submit" name="delete" id="btn_grey">Delete restaurant</button>
   </form>
   % end
 <br>
-<a href="/" class="btn_grey">Back to restaurants</a>
+<a href="/" id="btn_grey">Back to restaurants</a>

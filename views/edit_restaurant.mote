@@ -1,7 +1,7 @@
 % # encoding: utf-8
 
 <h3>Edit restaurant</h3>
-<form action="/admin/edit_restaurant/{{ restaurant_id }}" method="POST" class="form_add_restaurant">
+<form action="/admin/edit_restaurant/{{ restaurant_id }}" method="POST" id="form_add_restaurant">
   <label>Name:</label>
   <input type="text" name="restaurant[name]"
   value="{{ Restaurant[restaurant_id].name }}">
@@ -18,8 +18,8 @@
   <br>
 
   <div>
-    <button type="submit" name="save" class="btn_grey">Save changes</button>
+    <button type="submit" name="save" id="btn_grey">Save changes</button>
   </div>
 </form>
 <br><br>
-<a href="/restaurant/{{ restaurant_id }}" class="btn_grey">Back to restaurant</a>
+<a href="/restaurant/{{ restaurant_id }}" id="btn_grey">Back to restaurant</a>
