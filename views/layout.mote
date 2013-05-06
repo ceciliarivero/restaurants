@@ -1,6 +1,7 @@
 % # encoding: utf-8
 
-<!DOCTYPE html>
+<!doctype html>
+<html>
   <head>
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/css/layout.css" />
