@@ -15,9 +15,9 @@
     <th><a href="{{ link_by_cuisine }}">Cuisine</a></th>
     <th><a href="{{ link_by_rating }}">Rating</a></th>
   </tr>
-<p id="orderBy">
+<p id="orderBy"></p>
 % restaurants.each do |r|
-</p>
+
   <tr>
     <td><a href="/restaurant/{{ r.id }}" id="link">{{ r.name }}</a></td>
     <td>{{ r.cuisine }}</td>
