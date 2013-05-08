@@ -17,7 +17,6 @@
   </tr>
 <p id="orderBy"></p>
 % restaurants.each do |r|
-
   <tr>
     <td><a href="/restaurant/{{ r.id }}" id="link">{{ r.name }}</a></td>
     <td>{{ r.cuisine }}</td>
