@@ -46,7 +46,7 @@ class Guests < Cuba
         edit = params
         if Restaurant.find(:name => edit["name"]).empty?
           res.write mote("views/layout.mote",
-              title: "Login",
+              title: "Restaurants",
               message: "Restaurant not found.",
               content: mote("views/home.mote",
                 edit: edit,
