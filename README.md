@@ -25,7 +25,7 @@ In Terminal:
 
 - redis-cli
 - HMSET Admin:1 "email" "admin@mail.com" "password" "7110eda4d09e062aa5e4a390b0a572ac0d2c0220"
-(That's "1234" encrypted).
+ (That's "1234" encrypted).
 - SET Admin:id "1"
 - HMSET Admin:uniques:email "admin@mail.com" "1"
 - SADD Admin:all "1"
