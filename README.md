@@ -24,10 +24,12 @@ keys in Redis:
 In Terminal:
 
 - redis-cli
-- HMSET Admin:1 "email" "admin@mail.com" "password" "1234"
+- HMSET Admin:1 "email" "admin@mail.com" "password" "7110eda4d09e062aa5e4a390b0a572ac0d2c0220"
+(That's "1234" encrypted).
 - SET Admin:id "1"
 - HMSET Admin:uniques:email "admin@mail.com" "1"
 - SADD Admin:all "1"
 
-Remember to change your password as Admin once you log in
-('localhost:9393/admin), that way it will be saved encrypted in the db.
+To log in as Admin go to: 'localhost:9393/admin' and type:
+Email: admin@mail.com
+Password: 1234

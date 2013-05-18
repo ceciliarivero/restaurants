@@ -1,28 +1,25 @@
 body {
-  min-width: 960px;
+  min-width: 80%;
   background-color: #FFFFFF;
   margin: 0;
   padding: 0;
   font-family: "Arial", sans-serif;
-  font-size: 14px;
+  font-size: 0.8em;
   color: #444444;
 }
 #wrapper {
-  width: 960px;
+  width: 70%;
   height: auto;
   min-height: 600px;
-  float: left;
-  left: 50%;
-  position: absolute;
   background-color: #FFFFFF;
-  margin: 0px 0px 0px -480px;
-  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 15%;
+  padding: 0;
   border: 1px dotted #CCCCCC;
   border-top: none;
 }
 #header {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   background-color: #BAA681;
 }
 h1 {
@@ -52,7 +49,7 @@ table {
   padding: 0;
 }
 table tr td#left {
-  width: 300px;
+  width: 70%;
   padding: 10px;
   margin: 10px;
   background-color: #F8F3E8;
@@ -76,76 +73,68 @@ span {
   margin-left: 15px;
 }
 #form_add_restaurant {
-  width: 350px;
+  width: 30%;
   background: #fff;
-  padding: 20px;
+  padding: 2%;
   color: #777;
   border: 1px dotted #CCCCCC;
   overflow: hidden;
 }
 #form_add_restaurant label {
-  margin: 10px;
+  margin: 5%;
   color: #9B7B3C;
 }
 #form_add_restaurant input {
-  width: 310px;
-  margin: 10px 10px 20px 10px;
-  overflow: hidden;
+  width: 90%;
+  margin: 5% 5%;
 }
 #form_add_restaurant button {
-  margin-top: 20px;
+  margin-top: 5%;
   float: right;
 }
 #form_signup {
-  width: 250px;
+  width: 30%;
   background: #fff;
-  padding: 20px;
+  padding: 2%;
   color: #777;
   border: 1px dotted #CCCCCC;
   overflow: hidden;
 }
 #form_signup label {
-  margin: 10px;
+  margin: 5%;
   color: #9B7B3C;
 }
 #form_signup input {
-  width: 210px;
-  margin: 10px 10px 20px 10px;
+  width: 90%;
+  margin: 5% 5%;
   overflow: hidden;
 }
+#form_signup span {
+  font-size: 0.8em;
+}
 #form_signup button {
-  margin-top: 20px;
+  margin-top: 5%;
   float: right;
 }
-#form_signup span {
-  font-size: 11px;
-  margin-left: 10px;
-}
 #form_add_comment {
-  width: 350px;
+  width: 40%;
   background: #fff;
-  padding: 20px;
+  padding: 2%;
   color: #777;
   border: 1px dotted #CCCCCC;
   overflow: hidden;
 }
 #form_add_comment label {
-  margin: 10px;
+  margin: 5%;
   color: #9B7B3C;
 }
-#form_add_comment input {
-  width: 310px;
-  margin: 10px 10px 20px 10px;
-  overflow: hidden;
-}
 #form_add_comment button {
-  margin-top: 10px;
   float: right;
 }
 #form_add_comment textarea {
-  margin: 15px 10px 0px 10px;
+  width: 90%;
+  margin: 5% 5%;
   height: 100px;
-  width: 310px;
   line-height: 18px;
   border: 1px solid #c7c7c7;
 }
