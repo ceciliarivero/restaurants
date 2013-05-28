@@ -1,7 +1,5 @@
 # encoding: utf-8
 
-ENV["REDIS_URL"] = "redis://redistogo:2de8f67b9f05b8d22eeb8424dae08f3d@viperfish.redistogo.com:9109/"
-
 require "cuba"
 require "mote"
 require "rack/protection"
